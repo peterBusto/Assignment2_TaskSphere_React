@@ -212,6 +212,7 @@ const Register = () => {
                 disabled={loading}
               />
               <label htmlFor="terms_agreed" className="checkbox-label">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 I agree to the <button type="button" className="link-button" onClick={() => alert('Terms and Conditions will be displayed here')}>Terms and Conditions</button> and <button type="button" className="link-button" onClick={() => alert('Privacy Policy will be displayed here')}>Privacy Policy</button>
               </label>
             </div>
