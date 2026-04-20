@@ -212,7 +212,7 @@ const Register = () => {
                 disabled={loading}
               />
               <label htmlFor="terms_agreed" className="checkbox-label">
-                I agree to the <a href="#" onClick={(e) => { e.preventDefault(); alert('Terms and Conditions will be displayed here'); }}>Terms and Conditions</a> and <a href="#" onClick={(e) => { e.preventDefault(); alert('Privacy Policy will be displayed here'); }}>Privacy Policy</a>
+                I agree to the <button type="button" className="link-button" onClick={() => alert('Terms and Conditions will be displayed here')}>Terms and Conditions</button> and <button type="button" className="link-button" onClick={() => alert('Privacy Policy will be displayed here')}>Privacy Policy</button>
               </label>
             </div>
             {validationErrors.terms_agreed && (
