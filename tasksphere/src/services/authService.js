@@ -104,7 +104,6 @@ export const authService = {
         method: 'POST',
         headers: {
           'Authorization': `Token ${token}`,
-          'Content-Type': 'application/json',
         },
       });
       
