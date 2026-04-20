@@ -14,6 +14,7 @@ const Register = () => {
     terms_agreed: false,
   });
   const [validationErrors, setValidationErrors] = useState({});
+  const [registrationSuccess, setRegistrationSuccess] = useState(false);
   
   const { register, loading, error, clearError } = useAuth();
   const navigate = useNavigate();
@@ -85,7 +86,11 @@ const Register = () => {
 
     try {
       await register(formData);
-      navigate('/dashboard'); // Redirect to dashboard after successful registration
+      setRegistrationSuccess(true);
+      // Redirect to dashboard after 2.5 seconds to show success message
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 2500);
     } catch (err) {
       // Error is already handled in the context
     }
@@ -98,6 +103,13 @@ const Register = () => {
         <p>Join TaskSphere to manage your tasks efficiently</p>
         
         {error && <div className="error-message">{error}</div>}
+        
+        {registrationSuccess && (
+          <div className="success-message">
+            <h3>🎉 Account Created Successfully!</h3>
+            <p>Welcome to TaskSphere! You will be redirected to your dashboard in a moment...</p>
+          </div>
+        )}
         
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-row">
