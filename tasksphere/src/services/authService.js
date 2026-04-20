@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://127.0.0.1:8000/api/auth';
+const API_BASE_URL = 'https://assignment2-task-sphere-django.vercel.app/api/auth';
 
 export const authService = {
   // Registration
