@@ -2,7 +2,7 @@ name: React Build and Test
 
 on:
   push:
-    branches: [main]
+    branches: [main, 3-as-a-develper-i-want-to-have-github-action-for-react-build-and-test-so-that-i-can-see-what-happen-on-server]
   pull_request:
     branches: [main]
 
