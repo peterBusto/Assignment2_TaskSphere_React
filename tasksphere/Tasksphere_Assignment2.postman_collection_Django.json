@@ -1,0 +1,279 @@
+{
+  "info": {
+    "_postman_id": "3a151584-7218-45d3-bdfb-0f2b6bb7cb21",
+    "name": "Tasksphere_Assignment2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52676586",
+    "_collection_link": "https://go.postman.co/collection/52676586-3a151584-7218-45d3-bdfb-0f2b6bb7cb21?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Registration",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"peter1\",\r\n    \"first_name\": \"peter1\",\r\n    \"last_name\": \"busto1\", \r\n    \"email\": \"peterbusto1@example.com\",\r\n    \"password\": \"Test1234!5\",\r\n    \"confirm_password\": \"Test1234!5\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/auth/register/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "register",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"aaa@example.com\",\r\n    \"password\": \"Aaa_12345\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/auth/login/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "login",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token 0e8e6c29c8bd6366ed973a11c9cceb30783b16e6",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/auth/logout/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "auth",
+                "logout",
+                ""
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Task",
+      "item": [
+        {
+          "name": "NewTask",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token 7a0db8485cc5f88161cec40de17070ec3987ccfe",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"task 2\",\n    \"description\": \"another less important task\",\n    \"priority\": \"low\",\n    \"due_date\": \"2026-04-20T07:00:00Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assignment2-task-sphere-django.vercel.app/api/tasks/",
+              "protocol": "https",
+              "host": [
+                "assignment2-task-sphere-django",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "UpdateStatus",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token 7a0db8485cc5f88161cec40de17070ec3987ccfe",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"in_progress\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assignment2-task-sphere-django.vercel.app/api/tasks/5/status/",
+              "protocol": "https",
+              "host": [
+                "assignment2-task-sphere-django",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                "5",
+                "status",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "EditTask",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token 7a0db8485cc5f88161cec40de17070ec3987ccfe",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"write team msg\",\r\n    \"description\": \"enjoy\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://assignment2-task-sphere-django.vercel.app/api/tasks/",
+              "protocol": "https",
+              "host": [
+                "assignment2-task-sphere-django",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DeleteTask",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Token 7a0db8485cc5f88161cec40de17070ec3987ccfe"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "https://assignment2-task-sphere-django.vercel.app/api/tasks/id/",
+              "protocol": "https",
+              "host": [
+                "assignment2-task-sphere-django",
+                "vercel",
+                "app"
+              ],
+              "path": [
+                "api",
+                "tasks",
+                "id",
+                ""
+              ]
+            },
+            "description": "Generated from cURL: curl -X DELETE \"https://assignment2-task-sphere-django.vercel.app/api/tasks/5/\" -H \"Authorization: Token 7a0db8485cc5f88161cec40de17070ec3987ccfe\" -H \"Content-Type: application/json\""
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
