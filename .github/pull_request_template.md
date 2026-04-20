@@ -75,7 +75,6 @@ Please describe what this PR does and why.
 
 ### 8. Documentation
 - [ ] README or docs updated  
-- [ ] API changes documented  
 - [ ] Comments added for complex logic  
 
 ---
