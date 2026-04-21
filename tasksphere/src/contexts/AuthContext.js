@@ -30,7 +30,12 @@ export const AuthProvider = ({ children }) => {
       setLoading(true);
       setError(null);
       const data = await authService.register(userData);
-      setUser({ token: data.token });
+      setUser({ 
+        token: data.token,
+        username: data.login_data?.username,
+        email: data.login_data?.email,
+        user_id: data.login_data?.user_id
+      });
       return data;
     } catch (err) {
       setError(err.message);
@@ -45,7 +50,12 @@ export const AuthProvider = ({ children }) => {
       setLoading(true);
       setError(null);
       const data = await authService.login(credentials);
-      setUser({ token: data.token });
+      setUser({ 
+        token: data.token,
+        username: data.username,
+        email: data.email,
+        user_id: data.user_id
+      });
       return data;
     } catch (err) {
       setError(err.message);

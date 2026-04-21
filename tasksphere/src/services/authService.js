@@ -1,137 +1,62 @@
-const API_BASE_URL = 'https://assignment2-task-sphere-django.vercel.app/api/auth';
+import api from './api';
 
 export const authService = {
-  // Registration
-  async register(userData) {
-    console.log('Sending registration data:', userData);
-    
-    const response = await fetch(`${API_BASE_URL}/register/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-    });
-    
-    console.log('Response status:', response.status);
-    console.log('Response headers:', response.headers);
-    
-    if (!response.ok) {
-      const error = await response.json();
-      console.error('Registration error:', error);
-      
-      // Handle different error formats
-      let errorMessage = 'Registration failed';
-      if (error.detail) {
-        errorMessage = error.detail;
-      } else if (error.non_field_errors) {
-        errorMessage = error.non_field_errors.join(', ');
-      } else if (typeof error === 'object') {
-        // Handle field-specific errors with better formatting
-        const errorMessages = Object.entries(error).map(([field, messages]) => {
-          const fieldName = field.charAt(0).toUpperCase() + field.slice(1);
-          const messageArray = Array.isArray(messages) ? messages : [messages];
-          const formattedMessages = messageArray.map(msg => msg.charAt(0).toUpperCase() + msg.slice(1));
-          return `${fieldName}: ${formattedMessages.join(', ')}`;
-        });
-        errorMessage = errorMessages.join('\n');
-      }
-      
-      throw new Error(errorMessage);
-    }
-    
-    const data = await response.json();
-    console.log('Registration success:', data);
-    return data;
-  },
-
-  // Login
-  async login(credentials) {
-    console.log('Sending login data:', credentials);
-    
-    const response = await fetch(`${API_BASE_URL}/login/`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(credentials),
-    });
-    
-    console.log('Login response status:', response.status);
-    
-    if (!response.ok) {
-      const error = await response.json();
-      console.error('Login error:', error);
-      
-      let errorMessage = 'Login failed';
-      if (error.detail) {
-        errorMessage = error.detail;
-      } else if (error.non_field_errors) {
-        errorMessage = error.non_field_errors.join(', ');
-      } else if (typeof error === 'object') {
-        // Handle field-specific errors with better formatting
-        const errorMessages = Object.entries(error).map(([field, messages]) => {
-          const fieldName = field.charAt(0).toUpperCase() + field.slice(1);
-          const messageArray = Array.isArray(messages) ? messages : [messages];
-          const formattedMessages = messageArray.map(msg => msg.charAt(0).toUpperCase() + msg.slice(1));
-          return `${fieldName}: ${formattedMessages.join(', ')}`;
-        });
-        errorMessage = errorMessages.join('\n');
-      }
-      
-      throw new Error(errorMessage);
-    }
-    
-    const data = await response.json();
-    console.log('Login success:', data);
-    // Store token in localStorage
-    localStorage.setItem('authToken', data.token);
-    return data;
-  },
-
-  // Logout
-  async logout() {
-    const token = localStorage.getItem('authToken');
-    
-    // If no token, just remove any existing token and return
-    if (!token) {
-      localStorage.removeItem('authToken');
-      return { message: 'Already logged out' };
-    }
-
+  register: async (userData) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/logout/`, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Token ${token}`,
-        },
+      const response = await api.post('/api/auth/register/', userData);
+      
+      // Django registration doesn't return a token, so we need to login automatically
+      const loginResponse = await api.post('/api/auth/login/', {
+        email: userData.email,
+        password: userData.password
       });
       
-      // Remove token from localStorage regardless of response
-      localStorage.removeItem('authToken');
-      
-      if (!response.ok) {
-        // Don't throw error for logout, just log it
-        console.error('Logout API call failed:', response.status);
-        return { message: 'Logged out locally' };
+      // Store token from login response
+      if (loginResponse.data.token) {
+        localStorage.setItem('authToken', loginResponse.data.token);
+      } else {
+        throw new Error('No token received from auto-login');
       }
       
-      return await response.json();
+      // Return combined data
+      return {
+        ...response.data,
+        token: loginResponse.data.token,
+        login_data: loginResponse.data
+      };
     } catch (error) {
-      // Remove token and handle gracefully
-      localStorage.removeItem('authToken');
-      console.error('Logout error:', error);
-      return { message: 'Logged out locally' };
+      throw error;
     }
   },
 
-  // Get current token
-  getToken() {
-    return localStorage.getItem('authToken');
+  login: async (credentials) => {
+    try {
+      const response = await api.post('/api/auth/login/', credentials);
+      if (response.data.token) {
+        localStorage.setItem('authToken', response.data.token);
+      }
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
   },
 
-  // Check if user is authenticated
-  isAuthenticated() {
+  logout: async () => {
+    try {
+      const response = await api.post('/api/auth/logout/');
+      localStorage.removeItem('authToken');
+      return response.data;
+    } catch (error) {
+      localStorage.removeItem('authToken');
+      throw error;
+    }
+  },
+
+  isAuthenticated: () => {
     return !!localStorage.getItem('authToken');
   },
+
+  getToken: () => {
+    return localStorage.getItem('authToken');
+  }
 };
