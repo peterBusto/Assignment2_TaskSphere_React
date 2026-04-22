@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="018df9c6-574f-4b0f-b488-425a162a380d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/tasksphere/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/tasksphere/src/pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasksphere/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/tasksphere/src/pages/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasksphere/src/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/tasksphere/src/services/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasksphere/src/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/tasksphere/src/services/authService.js" afterDir="false" />
+    <list default="true" id="fbf68717-e0ea-4c99-9729-d3aabfbff4d2" name="Changes" comment="Add initial React UI for TaskSphere application&#10;1. Implemented initial React UI structure&#10;2. Added pages for task management&#10;3. Integrated backend API calls using Vercel-deployed Django API&#10;4. Managed authentication state">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasksphere/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/tasksphere/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasksphere/src/pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/tasksphere/src/pages/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasksphere/src/services/taskService.js" beforeDir="false" afterPath="$PROJECT_DIR$/tasksphere/src/services/taskService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -18,41 +28,43 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;NataliaVozhdaeva&quot;
+    &quot;assignee&quot;: &quot;joeyasadon&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/peterBusto/Assignment2_TaskSphere_React.git&quot;,
-    &quot;accountId&quot;: &quot;4524a7db-774f-45d2-bf65-546776a641f6&quot;
+    &quot;accountId&quot;: &quot;7318fe0d-6654-446d-a793-d6d452c26797&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 6
 }</component>
-  <component name="ProjectId" id="3Cb6YQBYP97f5FIxijGHUl4mW0K" />
+  <component name="ProjectId" id="3CZiDm9wxZZp4TTeZEvLll5sufx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "git-widget-placeholder": "13-as-a-user-i-want-to-get-user-friendly-messages-about-errors-so-that-i-…wrong",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/admin/Documents/Assignment2_TaskSphere_React",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\admin\\AppData\\Local\\Programs\\PyCharm 2025.3.2.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.Dashboard.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;15-as-a-user-i-want-to-remove-the-time-component-from-the-due-date-field-…-only&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/admin/PycharmProjects/DjangoProject1/Assignment2_TaskSphere_React&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PyCharm 2025.3.2.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -63,18 +75,83 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="018df9c6-574f-4b0f-b488-425a162a380d" name="Changes" comment="" />
-      <created>1776641970589</created>
+      <changelist id="fbf68717-e0ea-4c99-9729-d3aabfbff4d2" name="Changes" comment="" />
+      <created>1776599375732</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1776641970589</updated>
-      <workItem from="1776641971570" duration="3609000" />
-      <workItem from="1776820799979" duration="507000" />
-      <workItem from="1776821333173" duration="1991000" />
+      <updated>1776599375732</updated>
+      <workItem from="1776599376843" duration="32336000" />
     </task>
+    <task id="LOCAL-00001" summary="Setup the following for react:&#10;1. Dockerfile &#10;2. Docker compose file">
+      <option name="closed" value="true" />
+      <created>1776603687271</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776603687271</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add vercel.json file for vercel deployment">
+      <option name="closed" value="true" />
+      <created>1776604368029</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776604368029</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update vercel.json file for vercel deployment">
+      <option name="closed" value="true" />
+      <created>1776604640709</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1776604640709</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update vercel.json file for vercel deployment. Add install command.">
+      <option name="closed" value="true" />
+      <created>1776605112351</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1776605112351</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add vercel.json file in root folder">
+      <option name="closed" value="true" />
+      <created>1776605547566</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1776605547566</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update vercel.json file in root folder to points to correct output directory: tasksphere/build">
+      <option name="closed" value="true" />
+      <created>1776605799786</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1776605799786</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add initial React UI for TaskSphere application&#10;1. Implemented initial React UI structure&#10;2. Added pages for task management&#10;3. Integrated backend API calls using Vercel-deployed Django API&#10;4. Managed authentication state">
+      <option name="closed" value="true" />
+      <created>1776732341223</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1776732341223</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Setup the following for react:&#10;1. Dockerfile &#10;2. Docker compose file" />
+    <MESSAGE value="Add vercel.json file for vercel deployment" />
+    <MESSAGE value="Update vercel.json file for vercel deployment" />
+    <MESSAGE value="Update vercel.json file for vercel deployment. Add install command." />
+    <MESSAGE value="Add vercel.json file in root folder" />
+    <MESSAGE value="update vercel.json file in root folder to points to correct output directory: tasksphere/build" />
+    <MESSAGE value="Add initial React UI for TaskSphere application&#10;1. Implemented initial React UI structure&#10;2. Added pages for task management&#10;3. Integrated backend API calls using Vercel-deployed Django API&#10;4. Managed authentication state" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add initial React UI for TaskSphere application&#10;1. Implemented initial React UI structure&#10;2. Added pages for task management&#10;3. Integrated backend API calls using Vercel-deployed Django API&#10;4. Managed authentication state" />
   </component>
 </project>

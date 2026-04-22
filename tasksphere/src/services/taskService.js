@@ -16,7 +16,7 @@ export const taskService = {
         title: taskData.title,
         description: taskData.description || '',
         priority: taskData.priority || 'medium',
-        due_date: taskData.due_date ? new Date(taskData.due_date).toISOString() : null
+        due_date: taskData.due_date ? new Date(taskData.due_date + 'T12:00:00').toISOString() : null
       };
       
       const response = await api.post('/api/tasks/create/', requestData);
