@@ -25,13 +25,10 @@ const Register = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
-    
-    // Clear validation error for this field
-    if (validationErrors[name]) {
-      setValidationErrors(prev => ({
-        ...prev,
-        [name]: ''
-      }));
+
+    // Clear API error when user starts typing again
+    if (error) {
+      clearError();
     }
   };
 
