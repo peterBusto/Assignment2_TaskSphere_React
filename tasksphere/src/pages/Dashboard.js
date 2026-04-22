@@ -56,7 +56,7 @@ const Dashboard = () => {
       setEditingTask(null);
       fetchTasks();
     } catch (err) {
-      setError('Failed to save task');
+      setError(err.message || 'Failed to save task');
       console.error('Error saving task:', err);
     }
   };
@@ -66,7 +66,7 @@ const Dashboard = () => {
       await taskService.updateTaskStatus(taskId, newStatus);
       fetchTasks();
     } catch (err) {
-      setError('Failed to update task status');
+      setError(err.message || 'Failed to update task status');
       console.error('Error updating status:', err);
     }
   };
@@ -77,7 +77,7 @@ const Dashboard = () => {
         await taskService.deleteTask(taskId);
         fetchTasks();
       } catch (err) {
-        setError('Failed to delete task');
+        setError(err.message || 'Failed to delete task');
         console.error('Error deleting task:', err);
       }
     }
@@ -89,7 +89,7 @@ const Dashboard = () => {
       title: task.title,
       description: task.description,
       priority: task.priority,
-      due_date: task.due_date ? new Date(task.due_date).toISOString().slice(0, 16) : ''
+      due_date: task.due_date ? new Date(task.due_date).toISOString().slice(0, 10) : ''
     });
     setShowAddForm(true);
   };
@@ -451,7 +451,7 @@ const Dashboard = () => {
                 Due Date
               </label>
               <input
-                type="datetime-local"
+                type="date"
                 value={formData.due_date}
                 onChange={(e) => setFormData({...formData, due_date: e.target.value})}
                 style={{
