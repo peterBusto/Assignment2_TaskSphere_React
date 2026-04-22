@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="018df9c6-574f-4b0f-b488-425a162a380d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/tasksphere/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/tasksphere/src/pages/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasksphere/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/tasksphere/src/pages/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasksphere/src/services/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/tasksphere/src/services/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasksphere/src/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/tasksphere/src/services/authService.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;NataliaVozhdaeva&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/peterBusto/Assignment2_TaskSphere_React.git&quot;,
+    &quot;accountId&quot;: &quot;4524a7db-774f-45d2-bf65-546776a641f6&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="3Cb6YQBYP97f5FIxijGHUl4mW0K" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "git-widget-placeholder": "13-as-a-user-i-want-to-get-user-friendly-messages-about-errors-so-that-i-…wrong",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/admin/Documents/Assignment2_TaskSphere_React",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\admin\\AppData\\Local\\Programs\\PyCharm 2025.3.2.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.30387.173" />
+        <option value="bundled-python-sdk-4762d8aabb82-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.30387.173" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="018df9c6-574f-4b0f-b488-425a162a380d" name="Changes" comment="" />
+      <created>1776641970589</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776641970589</updated>
+      <workItem from="1776641971570" duration="3609000" />
+      <workItem from="1776820799979" duration="507000" />
+      <workItem from="1776821333173" duration="1991000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
