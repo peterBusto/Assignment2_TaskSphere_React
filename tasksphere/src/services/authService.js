@@ -31,7 +31,7 @@ export const authService = {
         const messages = [];
 
         // Collect all error messages from all fields
-        for (const [field, errors] of Object.entries(data)) {
+        for (const errors of Object.values(data)) {
           if (Array.isArray(errors)) {
             messages.push(...errors);
           } else if (typeof errors === 'string') {
@@ -62,7 +62,7 @@ export const authService = {
         const messages = [];
 
         // Collect all error messages from all fields
-        for (const [field, errors] of Object.entries(data)) {
+        for (const errors of Object.values(data)) {
           if (Array.isArray(errors)) {
             messages.push(...errors);
           } else if (typeof errors === 'string') {

@@ -41,7 +41,7 @@ const getErrorMessage = (error) => {
       if (data && typeof data === 'object') {
         // Extract ALL error messages from Django validation errors
         const allErrors = [];
-        for (const [field, errors] of Object.entries(data)) {
+        for (const errors of Object.values(data)) {
           if (Array.isArray(errors)) {
             allErrors.push(...errors);
           } else if (typeof errors === 'string') {
